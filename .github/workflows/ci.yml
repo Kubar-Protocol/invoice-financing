@@ -25,13 +25,13 @@ jobs:
           java-version: '17'
 
       # Step 3: Cache Gradle dependencies (to speed up builds)
-      #- name: Cache Gradle dependencies
-      #  uses: actions/cache@v4
-      #  with:
-      #    path: ~/.gradle/caches
-      #    key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-      #    restore-keys: |
-      #      ${{ runner.os }}-gradle-
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
       # Step 4: Build the project using Gradle
       #- name: Build with Gradle
