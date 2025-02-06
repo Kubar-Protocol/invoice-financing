@@ -34,8 +34,8 @@ jobs:
             ${{ runner.os }}-gradle-
 
       # Step 4: Build the project using Gradle
-      #- name: Build with Gradle
-      #  run: ./gradlew build --stacktrace
+      - name: Build with Gradle
+        run: ./gradlew build --stacktrace
 
       # Step 5: Run tests with Gradle
       #- name: Run tests
