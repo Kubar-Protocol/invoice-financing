@@ -10,3 +10,4 @@ clients/build/
 contracts/build/
 contracts/logs/
 workflows/build/
+workflows/logs/

@@ -8,7 +8,7 @@ import org.junit.Test
 import com.kubarprotocol.invoicefinancing.states.TemplateState
 
 class ContractTests {
-    private val ledgerServices: MockServices = MockServices(listOf("com.template"))
+    private val ledgerServices: MockServices = MockServices(listOf("com.kubarprotocol.invoicefinancing"))
     var alice = TestIdentity(CordaX500Name("Alice", "TestLand", "US"))
     var bob = TestIdentity(CordaX500Name("Bob", "TestLand", "US"))
 

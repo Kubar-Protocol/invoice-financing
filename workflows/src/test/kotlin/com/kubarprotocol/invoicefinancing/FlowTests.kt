@@ -21,8 +21,8 @@ class FlowTests {
     @Before
     fun setup() {
         network = MockNetwork(MockNetworkParameters(cordappsForAllNodes = listOf(
-                TestCordapp.findCordapp("com.template.contracts"),
-                TestCordapp.findCordapp("com.template.flows")
+                TestCordapp.findCordapp("com.kubarprotocol.invoicefinancing.contracts"),
+                TestCordapp.findCordapp("com.kubarprotocol.invoicefinancing.flows")
         ),
             notarySpecs = listOf(MockNetworkNotarySpec(CordaX500Name("Notary","London","GB")))))
         a = network.createPartyNode()
@@ -41,7 +41,7 @@ class FlowTests {
         network.runNetwork()
 
         //successful query means the state is stored at node b's vault. Flow went through.
-         val inputCriteria: QueryCriteria = QueryCriteria.VaultQueryCriteria().withStatus(StateStatus.UNCONSUMED)
-         val states = b.services.vaultService.queryBy(TemplateState::class.java, inputCriteria).states[0].state.data
+        val inputCriteria: QueryCriteria = QueryCriteria.VaultQueryCriteria().withStatus(StateStatus.UNCONSUMED)
+        val states = b.services.vaultService.queryBy(TemplateState::class.java, inputCriteria).states[0].state.data
     }
 }
