@@ -1,4 +1,4 @@
-package com.kubarprotocol.invoicefinancing.contracts
+package com.kubarprotocol.invoicefinancing.states
 
 import com.kubarprotocol.invoicefinancing.states.TemplateState
 import org.junit.Test

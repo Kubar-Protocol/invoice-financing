@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/TemplateContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/TemplateContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/ContractTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/ContractTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/FlowTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/FlowTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +48,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -82,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "external.system.has.shared.sources": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature-profilecontract",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/onggowahyudi/kubarprotocol/invoice-financing",
     "node.js.detected.package.eslint": "true",
@@ -113,7 +117,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.invoice-financing [clean]">
+  <component name="RunManager" selected="Gradle.invoice-financing [buildDependents]">
     <configuration name="ContractTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -251,11 +255,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.invoice-financing [buildDependents]" />
         <item itemvalue="Gradle.invoice-financing [clean]" />
         <item itemvalue="Gradle.invoice-financing [build]" />
         <item itemvalue="Gradle.ContractTests" />
         <item itemvalue="Gradle.StateTests" />
-        <item itemvalue="Gradle.invoice-financing [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +281,7 @@
       <updated>1727421007086</updated>
       <workItem from="1727421013494" duration="933000" />
       <workItem from="1738858933583" duration="174000" />
-      <workItem from="1738859242429" duration="12618000" />
+      <workItem from="1738859242429" duration="18389000" />
     </task>
     <servers />
   </component>
