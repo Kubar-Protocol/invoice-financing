@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/clients/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/template/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/Client.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/template/webserver/Controller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/Controller.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/template/webserver/NodeRPCConnection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/NodeRPCConnection.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/template/webserver/Server.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/Server.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/template/contracts/TemplateContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/TemplateContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/template/states/TemplateState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/TemplateState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/template/contracts/ContractTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/ContractTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/template/contracts/StateTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/StateTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/integrationTest/kotlin/com/template/DriverBasedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/integrationTest/kotlin/com/kubarprotocol/invoicefinancing/DriverBasedTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/com/template/flows/Flows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/Flows.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/test/kotlin/com/template/FlowTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/FlowTests.kt" afterDir="false" />
-    </list>
+    <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +69,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
@@ -178,7 +160,7 @@
       <updated>1727421007086</updated>
       <workItem from="1727421013494" duration="933000" />
       <workItem from="1738858933583" duration="174000" />
-      <workItem from="1738859242429" duration="7884000" />
+      <workItem from="1738859242429" duration="9178000" />
     </task>
     <servers />
   </component>
