@@ -1,6 +1,6 @@
-package com.template.contracts
+package com.kubarprotocol.invoicefinancing.contracts
 
-import com.template.states.TemplateState
+import com.kubarprotocol.invoicefinancing.states.TemplateState
 import org.junit.Test
 import kotlin.test.assertEquals
 

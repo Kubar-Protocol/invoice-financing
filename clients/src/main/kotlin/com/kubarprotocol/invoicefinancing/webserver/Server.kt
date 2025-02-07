@@ -1,4 +1,4 @@
-package com.template.webserver
+package com.kubarprotocol.invoicefinancing.webserver
 
 import org.springframework.boot.Banner
 import org.springframework.boot.SpringApplication
@@ -15,7 +15,7 @@ private open class Starter
  * Starts our Spring Boot application.
  */
 fun main(args: Array<String>) {
-    val app = SpringApplication(Starter::class.java)
+    val app = SpringApplication(com.kubarprotocol.invoicefinancing.webserver.Starter::class.java)
     app.setBannerMode(Banner.Mode.OFF)
     app.webApplicationType = SERVLET
     app.run(*args)

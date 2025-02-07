@@ -4,3 +4,9 @@
 /httpRequests/
 /dataSources/
 /dataSources.local.xml
+.DS_Store
+build/
+clients/build/
+contracts/build/
+contracts/logs/
+workflows/build/

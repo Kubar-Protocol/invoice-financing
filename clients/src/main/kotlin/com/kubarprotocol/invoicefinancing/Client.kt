@@ -1,4 +1,4 @@
-package com.template
+package com.kubarprotocol.invoicefinancing
 
 import net.corda.client.rpc.CordaRPCClient
 import net.corda.core.utilities.NetworkHostAndPort.Companion.parse

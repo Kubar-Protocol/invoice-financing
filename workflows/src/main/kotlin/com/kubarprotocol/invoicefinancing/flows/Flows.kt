@@ -1,4 +1,4 @@
-package com.template.flows
+package com.kubarprotocol.invoicefinancing.flows
 
 import co.paralleluniverse.fibers.Suspendable
 import net.corda.core.flows.*
@@ -16,11 +16,11 @@ import net.corda.core.flows.FlowSession
 
 import net.corda.core.identity.Party
 
-import com.template.contracts.TemplateContract
+import com.kubarprotocol.invoicefinancing.contracts.TemplateContract
 
 import net.corda.core.transactions.TransactionBuilder
 
-import com.template.states.TemplateState
+import com.kubarprotocol.invoicefinancing.states.TemplateState
 import net.corda.core.contracts.requireThat
 import net.corda.core.identity.AbstractParty
 
