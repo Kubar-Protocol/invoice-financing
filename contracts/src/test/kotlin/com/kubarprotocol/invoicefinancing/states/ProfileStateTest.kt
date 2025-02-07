@@ -48,4 +48,23 @@ class ProfileStateTest {
         assertEquals(1, profileState.participants.size)
         assertEquals(owner, profileState.participants[0])
     }
+
+    @Test
+    fun `ProfileState should be able to change to Inactive`() {
+        val profileState = ProfileState(
+            owner = owner,
+            mobileNumber = "1234567890",
+            gstUserName = "AliceGST",
+            gstIn = "1234567890ABCDEFGHI",
+            gstInStatus = "Active",
+            legalBusinessName = "Alice Corporatiion Ltd",
+            placeOfBusiness = "India",
+            status = Status.ACTIVE,
+        )
+
+        val updatedProfileState= profileState.copy(status= Status.INACTIVE)
+
+        assertEquals(Status.ACTIVE, profileState.status)
+        assertEquals(Status.INACTIVE, updatedProfileState.status)
+    }
 }
