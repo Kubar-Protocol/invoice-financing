@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.properties" beforeDir="false" afterPath="$PROJECT_DIR$/constants.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileStateTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileStateTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +58,17 @@
       <list>
         <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -76,6 +82,10 @@
     "Gradle.ContractTests (1).executor": "Run",
     "Gradle.ContractTests.dummytest.executor": "Debug",
     "Gradle.ContractTests.executor": "Run",
+    "Gradle.ProfileStateTest.Participants should only include owner.executor": "Run",
+    "Gradle.ProfileStateTest.ProfileState should be able to change to Inactive.executor": "Run",
+    "Gradle.ProfileStateTest.ProfileState should have correct fields.executor": "Run",
+    "Gradle.ProfileStateTest.executor": "Run",
     "Gradle.StateTests.executor": "Run",
     "Gradle.StateTests.hasFieldOfCorrectType.executor": "Run",
     "Gradle.invoice-financing [buildDependents].executor": "Run",
@@ -117,8 +127,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.invoice-financing [buildDependents]">
-    <configuration name="ContractTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ProfileStateTest">
+    <configuration name="ProfileStateTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +141,7 @@
           <list>
             <option value=":contracts:test" />
             <option value="--tests" />
-            <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.ContractTests&quot;" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.states.ProfileStateTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,7 +152,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StateTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProfileStateTest.Participants should only include owner" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -155,7 +165,7 @@
           <list>
             <option value=":contracts:test" />
             <option value="--tests" />
-            <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.StateTests&quot;" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.states.ProfileStateTest.Participants should only include owner&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -166,26 +176,52 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="invoice-financing [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProfileStateTest.ProfileState should be able to change to Inactive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildDependents" />
+            <option value=":contracts:test" />
+            <option value="--tests" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.states.ProfileStateTest.ProfileState should be able to change to Inactive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProfileStateTest.ProfileState should have correct fields" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":contracts:test" />
+            <option value="--tests" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.states.ProfileStateTest.ProfileState should have correct fields&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="invoice-financing [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -200,28 +236,6 @@
         <option name="taskNames">
           <list>
             <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="invoice-financing [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -255,11 +269,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.invoice-financing [buildDependents]" />
-        <item itemvalue="Gradle.invoice-financing [clean]" />
+        <item itemvalue="Gradle.ProfileStateTest" />
+        <item itemvalue="Gradle.ProfileStateTest.ProfileState should be able to change to Inactive" />
+        <item itemvalue="Gradle.ProfileStateTest.Participants should only include owner" />
+        <item itemvalue="Gradle.ProfileStateTest.ProfileState should have correct fields" />
         <item itemvalue="Gradle.invoice-financing [build]" />
-        <item itemvalue="Gradle.ContractTests" />
-        <item itemvalue="Gradle.StateTests" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +295,14 @@
       <updated>1727421007086</updated>
       <workItem from="1727421013494" duration="933000" />
       <workItem from="1738858933583" duration="174000" />
-      <workItem from="1738859242429" duration="18389000" />
+      <workItem from="1738859242429" duration="19713000" />
+      <workItem from="1738943121846" duration="58000" />
+      <workItem from="1738944302493" duration="80000" />
+      <workItem from="1738944439231" duration="1241000" />
+      <workItem from="1738945838684" duration="41000" />
+      <workItem from="1738945899685" duration="1644000" />
+      <workItem from="1738947784231" duration="94000" />
+      <workItem from="1738947881750" duration="2258000" />
     </task>
     <servers />
   </component>

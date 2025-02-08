@@ -4,7 +4,6 @@ import net.corda.core.identity.CordaX500Name
 import net.corda.testing.core.TestIdentity
 import org.junit.Test
 import kotlin.test.assertEquals
-import java.time.Instant
 
 class ProfileStateTest {
     private val owner = TestIdentity(CordaX500Name("Alice", "London", "GB")).party
@@ -17,7 +16,7 @@ class ProfileStateTest {
             gstUserName = "AliceGST",
             gstIn = "1234567890ABCDEFGHI",
             gstInStatus = "Active",
-            legalBusinessName = "Alice Corporatiion Ltd",
+            legalBusinessName = "Alice Corporation Ltd",
             placeOfBusiness = "India",
             status = Status.ACTIVE,
         )
@@ -27,7 +26,7 @@ class ProfileStateTest {
         assertEquals("AliceGST", profileState.gstUserName)
         assertEquals("1234567890ABCDEFGHI", profileState.gstIn)
         assertEquals("Active", profileState.gstInStatus)
-        assertEquals("Alice Corporatiion Ltd", profileState.legalBusinessName)
+        assertEquals("Alice Corporation Ltd", profileState.legalBusinessName)
         assertEquals("India", profileState.placeOfBusiness)
         assertEquals(Status.ACTIVE, profileState.status)
     }
@@ -40,7 +39,7 @@ class ProfileStateTest {
             gstUserName = "AliceGST",
             gstIn = "1234567890ABCDEFGHI",
             gstInStatus = "Active",
-            legalBusinessName = "Alice Corporatiion Ltd",
+            legalBusinessName = "Alice Corporation Ltd",
             placeOfBusiness = "India",
             status = Status.ACTIVE,
         )
