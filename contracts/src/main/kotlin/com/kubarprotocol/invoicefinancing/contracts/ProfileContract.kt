@@ -34,7 +34,7 @@ class ProfileContract : Contract {
         signers: List<PublicKey>,
     ) {
         requireThat {
-            // Creation rules
+            // Creation rules (UTXO)
             "No inputs should be consumed when creating a new profile." using (tx.inputs.isEmpty())
             "Only one output state should be created." using (tx.outputs.size == 1)
 
@@ -42,12 +42,12 @@ class ProfileContract : Contract {
 
             // Validate fields
             "Owner must be a required signer." using (signers.contains(output.owner.owningKey))
-            "Mobile number must be non-empty." using (output.mobileNumber.isNotBlank())
-            "GST UserName must be non-empty." using (output.gstUserName.isNotBlank())
-            "GST Identification Number must be non-empty." using (output.gstIn.isNotEmpty())
+            "Mobile number cannot be empty." using (output.mobileNumber.isNotBlank())
+            "GST UserName cannot be empty." using (output.gstUserName.isNotBlank())
+            "GST Identification Number cannot be empty." using (output.gstIn.isNotEmpty())
             "GST status must be ACTIVE." using (output.status.toString().equals(Status.ACTIVE.name, true))
-            "Legal Business Name must be non-empty." using (output.legalBusinessName.isNotBlank())
-            "Place Of Business must be non-empty." using (output.placeOfBusiness.isNotBlank())
+            "Legal Business Name cannot be empty." using (output.legalBusinessName.isNotBlank())
+            "Place Of Business cannot be empty." using (output.placeOfBusiness.isNotBlank())
             "Status must be ACTIVE." using (output.status.toString().equals(Status.ACTIVE.name, true))
         }
     }
@@ -57,8 +57,27 @@ class ProfileContract : Contract {
         signers: List<PublicKey>,
     ) {
         requireThat {
-            "There must be exactly one input profile." using(tx.inputs.size ==1)
-            "There must be exactly one output profile." using(tx.outputs.size ==1)
+            // Update rules (UTXO)
+            "There must be exactly one input profile." using (tx.inputs.size == 1)
+            "There must be exactly one output profile." using (tx.outputs.size == 1)
+
+            val input = tx.inputsOfType<ProfileState>().single()
+            val output = tx.outputsOfType<ProfileState>().single()
+
+            // Immutability checks
+            "Owner cannot be changed." using (input.owner == output.owner)
+            "Linear ID cannot be changed." using (input.linearId == output.linearId)
+            "GST Identification Number cannot be changed." using (input.gstIn == output.gstIn)
+
+            // Signature checks
+            "Owner must sign the update." using (signers.contains(input.owner.owningKey))
+
+            // Validate field
+            "Mobile number cannot be empty." using (output.mobileNumber.isNotBlank())
+            "GST UserName cannot be empty." using (output.gstUserName.isNotBlank())
+            "GST status cannot be empty." using (output.status.toString().isNotEmpty())
+            "Legal Business Name cannot be empty." using (output.legalBusinessName.isNotBlank())
+            "Place Of Business cannot be empty." using (output.placeOfBusiness.isNotBlank())
         }
     }
 }

@@ -1,7 +1,9 @@
 package com.kubarprotocol.invoicefinancing.states
 
 import com.kubarprotocol.invoicefinancing.common.Status
+import com.kubarprotocol.invoicefinancing.contracts.ProfileContract
 import com.kubarprotocol.invoicefinancing.schema.ProfileSchemaV1
+import net.corda.core.contracts.BelongsToContract
 import net.corda.core.contracts.LinearState
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.identity.AbstractParty
@@ -11,7 +13,7 @@ import net.corda.core.schemas.PersistentState
 import net.corda.core.schemas.QueryableState
 import java.time.Instant
 
-// @BelongsToContract(TemplateContract::class)
+@BelongsToContract(ProfileContract::class)
 data class ProfileState(
     val owner: Party,
     val mobileNumber: String,
