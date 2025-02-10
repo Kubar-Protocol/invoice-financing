@@ -7,7 +7,7 @@
     <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/ProfileContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/ProfileContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/ProfileFlows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/ProfileFlows.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +295,7 @@
       <workItem from="1738945838684" duration="41000" />
       <workItem from="1738945899685" duration="1644000" />
       <workItem from="1738947784231" duration="94000" />
-      <workItem from="1738947881750" duration="29709000" />
+      <workItem from="1738947881750" duration="31787000" />
     </task>
     <servers />
   </component>

@@ -15,6 +15,9 @@ import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import java.time.Instant
 
+/**
+ * Flow to create a new profile on the ledger.
+ */
 @InitiatingFlow
 @StartableByRPC
 class CreateProfileFlow(
@@ -27,10 +30,10 @@ class CreateProfileFlow(
 ) : FlowLogic<SignedTransaction>() {
     @Suspendable
     override fun call(): SignedTransaction {
-        // 1. Get owner identity
+        // 1. Get the identity of the initiating node (owner)
         val owner = ourIdentity
 
-        // 2. Create output state
+        // 2. Create a new ProfileState instance with provided details
         val profileState =
             ProfileState(
                 owner = owner,
@@ -43,25 +46,28 @@ class CreateProfileFlow(
                 status = Status.ACTIVE,
             )
 
-        // 3. Create transaction components
+        // 3. Define the command for profile creation
         val command = Command(ProfileContract.Commands.Create(), owner.owningKey)
 
-        // 4. Build transaction
+        // 4. Retrieve a notary from the network and build the transaction
         val notary = serviceHub.networkMapCache.notaryIdentities.first()
         val txBuilder =
             TransactionBuilder(notary)
                 .addOutputState(profileState, ProfileContract.ID)
                 .addCommand(command)
 
-        // 5. Verify and Sign transaction
+        // 5. Verify and sign the transaction
         txBuilder.verify(serviceHub)
         val signedTx = serviceHub.signInitialTransaction(txBuilder)
 
-        // 6. Finalize transaction (no participants needed besides owner)
+        // 6. Finalize the transaction and record it in the ledger
         return subFlow(FinalityFlow(signedTx, emptyList()))
     }
 }
 
+/**
+ * Flow to update an existing profile on the ledger.
+ */
 @InitiatingFlow
 @StartableByRPC
 class UpdateProfileFlow(
@@ -74,20 +80,20 @@ class UpdateProfileFlow(
 ) : FlowLogic<SignedTransaction>() {
     @Suspendable
     override fun call(): SignedTransaction {
-        // 1. Get the full StateAndRef from vault (transaction state + input state)
+        // 1. Retrieve the existing profile state from the vault
         val stateAndRef =
             serviceHub.vaultService
                 .queryBy<ProfileState>()
                 .states
                 .single { it.state.data.linearId == linearId }
 
-        // 2. Verify ownership
+        // 2. Verify that the initiator is the owner of the profile
         val owner = ourIdentity
         require(
             stateAndRef.state.data.owner == owner,
         ) { "Only profile owner can update (${owner.name} vs ${stateAndRef.state.data.owner.name})." }
 
-        // 3. Create updated state
+        // 3. Create an updated ProfileState instance with modified details
         val updatedState =
             stateAndRef.state.data.copy(
                 mobileNumber = newMobileNumber,
@@ -98,10 +104,10 @@ class UpdateProfileFlow(
                 lastModified = Instant.now(),
             )
 
-        // 4. Create transaction components
+        // 4. Define the command for profile update
         val command = Command(ProfileContract.Commands.Update(), owner.owningKey)
 
-        // 5. Build transaction components
+        // 5. Retrieve the notary from the existing state and build the transaction
         val notary = stateAndRef.state.notary
         val txBuilder =
             TransactionBuilder(notary)
@@ -109,11 +115,11 @@ class UpdateProfileFlow(
                 .addOutputState(updatedState, ProfileContract.ID)
                 .addCommand(command)
 
-        // 6. Verify and sign transaction
+        // 6. Verify and sign the transaction
         txBuilder.verify(serviceHub)
         val signedTx = serviceHub.signInitialTransaction(txBuilder)
 
-        // 7. Finalized transaction
+        // 7. Finalize the transaction and record it in the ledger
         return subFlow(FinalityFlow(signedTx, emptyList()))
     }
 }
