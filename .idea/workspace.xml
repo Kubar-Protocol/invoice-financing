@@ -6,11 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.properties" beforeDir="false" afterPath="$PROJECT_DIR$/constants.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/Controller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/Controller.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/NodeRPCConnection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/kubarprotocol/invoicefinancing/webserver/NodeRPCConnection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/TemplateContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/TemplateContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/schema/ProfileSchema.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/schema/ProfileSchema.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/TemplateState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/TemplateState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/ContractTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/ContractTests.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileStateTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileStateTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/StateTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/StateTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/integrationTest/kotlin/com/kubarprotocol/invoicefinancing/DriverBasedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/integrationTest/kotlin/com/kubarprotocol/invoicefinancing/DriverBasedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/Flows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/Flows.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/FlowTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/FlowTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -127,7 +135,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ProfileStateTest">
+  <component name="RunManager" selected="Gradle.invoice-financing [build]">
     <configuration name="ProfileStateTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -269,11 +277,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.invoice-financing [build]" />
         <item itemvalue="Gradle.ProfileStateTest" />
         <item itemvalue="Gradle.ProfileStateTest.ProfileState should be able to change to Inactive" />
         <item itemvalue="Gradle.ProfileStateTest.Participants should only include owner" />
         <item itemvalue="Gradle.ProfileStateTest.ProfileState should have correct fields" />
-        <item itemvalue="Gradle.invoice-financing [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +310,7 @@
       <workItem from="1738945838684" duration="41000" />
       <workItem from="1738945899685" duration="1644000" />
       <workItem from="1738947784231" duration="94000" />
-      <workItem from="1738947881750" duration="2258000" />
+      <workItem from="1738947881750" duration="21194000" />
     </task>
     <servers />
   </component>

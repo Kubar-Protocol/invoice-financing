@@ -1,5 +1,6 @@
 package com.kubarprotocol.invoicefinancing.states
 
+import com.kubarprotocol.invoicefinancing.common.Status
 import net.corda.core.identity.CordaX500Name
 import net.corda.testing.core.TestIdentity
 import org.junit.Test
@@ -10,16 +11,17 @@ class ProfileStateTest {
 
     @Test
     fun `ProfileState should have correct fields`() {
-        val profileState = ProfileState(
-            owner = owner,
-            mobileNumber = "1234567890",
-            gstUserName = "AliceGST",
-            gstIn = "1234567890ABCDEFGHI",
-            gstInStatus = "Active",
-            legalBusinessName = "Alice Corporation Ltd",
-            placeOfBusiness = "India",
-            status = Status.ACTIVE,
-        )
+        val profileState =
+            ProfileState(
+                owner = owner,
+                mobileNumber = "1234567890",
+                gstUserName = "AliceGST",
+                gstIn = "1234567890ABCDEFGHI",
+                gstInStatus = "Active",
+                legalBusinessName = "Alice Corporation Ltd",
+                placeOfBusiness = "India",
+                status = Status.ACTIVE,
+            )
 
         assertEquals(owner, profileState.owner)
         assertEquals("1234567890", profileState.mobileNumber)
@@ -33,16 +35,17 @@ class ProfileStateTest {
 
     @Test
     fun `Participants should only include owner`() {
-        val profileState = ProfileState(
-            owner = owner,
-            mobileNumber = "1234567890",
-            gstUserName = "AliceGST",
-            gstIn = "1234567890ABCDEFGHI",
-            gstInStatus = "Active",
-            legalBusinessName = "Alice Corporation Ltd",
-            placeOfBusiness = "India",
-            status = Status.ACTIVE,
-        )
+        val profileState =
+            ProfileState(
+                owner = owner,
+                mobileNumber = "1234567890",
+                gstUserName = "AliceGST",
+                gstIn = "1234567890ABCDEFGHI",
+                gstInStatus = "Active",
+                legalBusinessName = "Alice Corporation Ltd",
+                placeOfBusiness = "India",
+                status = Status.ACTIVE,
+            )
 
         assertEquals(1, profileState.participants.size)
         assertEquals(owner, profileState.participants[0])
@@ -50,18 +53,19 @@ class ProfileStateTest {
 
     @Test
     fun `ProfileState should be able to change to Inactive`() {
-        val profileState = ProfileState(
-            owner = owner,
-            mobileNumber = "1234567890",
-            gstUserName = "AliceGST",
-            gstIn = "1234567890ABCDEFGHI",
-            gstInStatus = "Active",
-            legalBusinessName = "Alice Corporatiion Ltd",
-            placeOfBusiness = "India",
-            status = Status.ACTIVE,
-        )
+        val profileState =
+            ProfileState(
+                owner = owner,
+                mobileNumber = "1234567890",
+                gstUserName = "AliceGST",
+                gstIn = "1234567890ABCDEFGHI",
+                gstInStatus = "Active",
+                legalBusinessName = "Alice Corporatiion Ltd",
+                placeOfBusiness = "India",
+                status = Status.ACTIVE,
+            )
 
-        val updatedProfileState= profileState.copy(status= Status.INACTIVE)
+        val updatedProfileState = profileState.copy(status = Status.INACTIVE)
 
         assertEquals(Status.ACTIVE, profileState.status)
         assertEquals(Status.INACTIVE, updatedProfileState.status)

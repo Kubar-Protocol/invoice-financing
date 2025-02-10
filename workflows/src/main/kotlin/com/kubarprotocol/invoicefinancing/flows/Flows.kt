@@ -1,53 +1,47 @@
 package com.kubarprotocol.invoicefinancing.flows
 
 import co.paralleluniverse.fibers.Suspendable
-import net.corda.core.flows.*
-import net.corda.core.identity.*
-import net.corda.core.utilities.ProgressTracker
-import net.corda.core.flows.FinalityFlow
-
-import net.corda.core.flows.CollectSignaturesFlow
-
-import net.corda.core.transactions.SignedTransaction
-
-import java.util.stream.Collectors
-
-import net.corda.core.flows.FlowSession
-
-import net.corda.core.identity.Party
-
 import com.kubarprotocol.invoicefinancing.contracts.TemplateContract
-
-import net.corda.core.transactions.TransactionBuilder
-
 import com.kubarprotocol.invoicefinancing.states.TemplateState
 import net.corda.core.contracts.requireThat
+import net.corda.core.flows.*
+import net.corda.core.flows.CollectSignaturesFlow
+import net.corda.core.flows.FinalityFlow
+import net.corda.core.flows.FlowSession
+import net.corda.core.identity.*
 import net.corda.core.identity.AbstractParty
-
+import net.corda.core.identity.Party
+import net.corda.core.transactions.SignedTransaction
+import net.corda.core.transactions.TransactionBuilder
+import net.corda.core.utilities.ProgressTracker
+import java.util.stream.Collectors
 
 // *********
 // * Flows *
 // *********
 @InitiatingFlow
 @StartableByRPC
-class Initiator(private val receiver: Party) : FlowLogic<SignedTransaction>() {
+class Initiator(
+    private val receiver: Party,
+) : FlowLogic<SignedTransaction>() {
     override val progressTracker = ProgressTracker()
 
     @Suspendable
     override fun call(): SignedTransaction {
-        //Hello World message
+        // Hello World message
         val msg = "Hello-World"
         val sender = ourIdentity
 
         // Step 1. Get a reference to the notary service on our network and our key pair.
         // Note: ongoing work to support multiple notary identities is still in progress.
-        val notary = serviceHub.networkMapCache.getNotary( CordaX500Name.parse("O=Notary,L=London,C=GB"))
+        val notary = serviceHub.networkMapCache.getNotary(CordaX500Name.parse("O=Notary,L=London,C=GB"))
 
-        //Compose the State that carries the Hello World message
+        // Compose the State that carries the Hello World message
         val output = TemplateState(msg, sender, receiver)
 
         // Step 3. Create a new TransactionBuilder object.
-        val builder = TransactionBuilder(notary)
+        val builder =
+            TransactionBuilder(notary)
                 .addCommand(TemplateContract.Commands.Create(), listOf(sender.owningKey, receiver.owningKey))
                 .addOutputState(output)
 
@@ -55,9 +49,13 @@ class Initiator(private val receiver: Party) : FlowLogic<SignedTransaction>() {
         builder.verify(serviceHub)
         val ptx = serviceHub.signInitialTransaction(builder)
 
-
         // Step 6. Collect the other party's signature using the SignTransactionFlow.
-        val otherParties: MutableList<Party> = output.participants.stream().map { el: AbstractParty? -> el as Party? }.collect(Collectors.toList())
+        val otherParties: MutableList<Party> =
+            output.participants
+                .stream()
+                .map { el: AbstractParty? ->
+                    el as Party?
+                }.collect(Collectors.toList())
         otherParties.remove(ourIdentity)
         val sessions = otherParties.stream().map { el: Party? -> initiateFlow(el!!) }.collect(Collectors.toList())
 
@@ -69,16 +67,19 @@ class Initiator(private val receiver: Party) : FlowLogic<SignedTransaction>() {
 }
 
 @InitiatedBy(Initiator::class)
-class Responder(val counterpartySession: FlowSession) : FlowLogic<SignedTransaction>() {
+class Responder(
+    val counterpartySession: FlowSession,
+) : FlowLogic<SignedTransaction>() {
     @Suspendable
     override fun call(): SignedTransaction {
-        val signTransactionFlow = object : SignTransactionFlow(counterpartySession) {
-            override fun checkTransaction(stx: SignedTransaction) = requireThat {
-               //Addition checks
+        val signTransactionFlow =
+            object : SignTransactionFlow(counterpartySession) {
+                override fun checkTransaction(stx: SignedTransaction) =
+                    requireThat {
+                        // Addition checks
+                    }
             }
-        }
         val txId = subFlow(signTransactionFlow).id
         return subFlow(ReceiveFinalityFlow(counterpartySession, expectedTxId = txId))
     }
 }
-
