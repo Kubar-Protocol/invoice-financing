@@ -1,5 +1,7 @@
 import static org.gradle.api.JavaVersion.VERSION_17
 
+
+
 buildscript { //properties that you need to build the project
 
     Properties constants = new Properties()
@@ -50,7 +52,13 @@ buildscript { //properties that you need to build the project
         classpath "net.corda.plugins:cordformation:$corda_gradle_plugins_version"
         classpath "net.corda.plugins:quasar-utils:$corda_gradle_plugins_version"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_gradle_plugin_version"
+
     }
+}
+
+
+plugins { //Plugins DSL simplifies plugin management
+    id "org.jlleitschuh.gradle.ktlint" version "12.1.2"
 }
 
 allprojects { //Properties that you need to compile your project (The application)

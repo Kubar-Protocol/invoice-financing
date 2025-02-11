@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/common/CommonEnums.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/common/CommonEnums.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/ProfileContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/ProfileContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/schema/ProfileSchema.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/schema/ProfileSchema.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/contracts/ContractTests.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileStateTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/test/kotlin/com/kubarprotocol/invoicefinancing/states/ProfileStateTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/integrationTest/kotlin/com/kubarprotocol/invoicefinancing/DriverBasedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/integrationTest/kotlin/com/kubarprotocol/invoicefinancing/DriverBasedTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/ProfileFlows.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/ProfileFlows.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +148,31 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ProfileContractTest.update transaction with invalid GST Status should fail">
+  <component name="RunManager" selected="Gradle.invoice-financing [buildDependents]">
+    <configuration name="ProfileContractTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":contracts:test" />
+            <option value="--tests" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.ProfileContractTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ProfileContractTest.update transaction with invalid GST Status should fail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -170,78 +187,6 @@
             <option value=":contracts:test" />
             <option value="--tests" />
             <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.ProfileContractTest.update transaction with invalid GST Status should fail&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProfileContractTest.update transaction with invalid GST UserName should fail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":contracts:test" />
-            <option value="--tests" />
-            <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.ProfileContractTest.update transaction with invalid GST UserName should fail&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProfileContractTest.update transaction with invalid Legal Business Name should fail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":contracts:test" />
-            <option value="--tests" />
-            <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.ProfileContractTest.update transaction with invalid Legal Business Name should fail&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProfileContractTest.update transaction with invalid Mobile Number should fail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":contracts:test" />
-            <option value="--tests" />
-            <option value="&quot;com.kubarprotocol.invoicefinancing.contracts.ProfileContractTest.update transaction with invalid Mobile Number should fail&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -276,6 +221,50 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="invoice-financing [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="invoice-financing [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ServerKt" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="invoice-financing.clients.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.kubarprotocol.webserver.ServerKt" />
@@ -299,11 +288,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.invoice-financing [buildDependents]" />
+        <item itemvalue="Gradle.invoice-financing [clean]" />
+        <item itemvalue="Gradle.ProfileContractTest" />
         <item itemvalue="Gradle.ProfileContractTest.update transaction with invalid GST Status should fail" />
         <item itemvalue="Gradle.ProfileContractTest.update transaction with invalid Place Of Business should fail" />
-        <item itemvalue="Gradle.ProfileContractTest.update transaction with invalid Legal Business Name should fail" />
-        <item itemvalue="Gradle.ProfileContractTest.update transaction with invalid GST UserName should fail" />
-        <item itemvalue="Gradle.ProfileContractTest.update transaction with invalid Mobile Number should fail" />
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +321,7 @@
       <workItem from="1738945838684" duration="41000" />
       <workItem from="1738945899685" duration="1644000" />
       <workItem from="1738947784231" duration="94000" />
-      <workItem from="1738947881750" duration="44122000" />
+      <workItem from="1738947881750" duration="47771000" />
     </task>
     <servers />
   </component>
