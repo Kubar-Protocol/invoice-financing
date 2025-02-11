@@ -1,3 +1,19 @@
+/*
+ * Copyright 2025 Kubar Protocol
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.kubarprotocol.invoicefinancing.contracts
 
 import com.kubarprotocol.invoicefinancing.common.Status
@@ -16,7 +32,7 @@ import java.security.PublicKey
 class ProfileContract : Contract {
     companion object {
         // Unique identifier for this contract
-        const val ID = "1b1f4329-df0d-49d4-9c80-30316fac3ad7"
+        const val ID = "com.kubarprotocol.invoicefinancing.contracts.ProfileContract"
     }
 
     /**
@@ -99,7 +115,7 @@ class ProfileContract : Contract {
             // Field validations
             "Mobile number cannot be empty." using (output.mobileNumber.isNotBlank())
             "GST UserName cannot be empty." using (output.gstUserName.isNotBlank())
-            "GST status cannot be empty." using (output.status.toString().isNotEmpty())
+            "GST status cannot be empty." using (output.gstInStatus.isNotEmpty())
             "Legal Business Name cannot be empty." using (output.legalBusinessName.isNotBlank())
             "Place Of Business cannot be empty." using (output.placeOfBusiness.isNotBlank())
         }
