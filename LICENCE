@@ -1,4 +1,13 @@
-  Copyright 2016, R3 Limited.
+   Copyright 2025, Kubarprotocol.
+
+   The invoice-financing smart contract is an independent project developed by Kubarprotocol and is licensed under the Apache License 2.0.
+   For more information about Kubarprotocol, visit https://Kubarprotocol.net.
+
+   This project uses the Corda framework 4.12 (Open Source), which is developed by R3 Limited and licensed under the Apache License 2.0.
+   For more information about Corda, visit https://corda.net.
+
+
+   Copyright 2016, R3 Limited.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
