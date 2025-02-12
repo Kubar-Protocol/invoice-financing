@@ -7,11 +7,7 @@
     <list default="true" id="cadfa592-fc39-4c6b-a1f1-bcf83634dfab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LICENCE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENCE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/contracts/TemplateContract.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/com/kubarprotocol/invoicefinancing/states/TemplateState.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/com/kubarprotocol/invoicefinancing/flows/Flows.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/FlowTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/ProfileFlowsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/test/kotlin/com/kubarprotocol/invoicefinancing/ProfileFlowsTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +106,8 @@
     "Gradle.ProfileContractTest.update transaction with multiple outputs should fail.executor": "Run",
     "Gradle.ProfileContractTest.update transaction with valid parameters should verify.executor": "Run",
     "Gradle.ProfileFlowsTest.create profile flow should produce valid transaction.executor": "Run",
+    "Gradle.ProfileFlowsTest.non-owner should not be able to update profile.executor": "Run",
+    "Gradle.ProfileFlowsTest.update flow should fail for non-existent profile.executor": "Run",
     "Gradle.ProfileStateTest.Participants should only include owner.executor": "Run",
     "Gradle.ProfileStateTest.ProfileState should be able to change to Inactive.executor": "Run",
     "Gradle.ProfileStateTest.ProfileState should have correct fields.executor": "Run",
@@ -159,30 +157,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Gradle.invoice-financing [build]">
-    <configuration name="FlowTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":workflows:test" />
-            <option value="--tests" />
-            <option value="&quot;com.kubarprotocol.invoicefinancing.FlowTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="ProfileFlowsTest.create profile flow should produce valid transaction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -207,6 +181,76 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ProfileFlowsTest.non-owner should not be able to update profile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":workflows:test" />
+            <option value="--tests" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.ProfileFlowsTest.non-owner should not be able to update profile&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProfileFlowsTest.update flow should fail for non-existent profile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":workflows:test" />
+            <option value="--tests" />
+            <option value="&quot;com.kubarprotocol.invoicefinancing.ProfileFlowsTest.update flow should fail for non-existent profile&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="invoice-financing [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="invoice-financing [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -228,43 +272,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
-    </configuration>
-    <configuration name="invoice-financing [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="FlowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="invoice-financing.workflows.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.kubarprotocol.invoicefinancing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.kubarprotocol.invoicefinancing" />
-      <option name="MAIN_CLASS_NAME" value="com.kubarprotocol.invoicefinancing.FlowTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="ServerKt" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="invoice-financing.clients.main" />
@@ -290,10 +297,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.invoice-financing [build]" />
-        <item itemvalue="Gradle.invoice-financing [clean]" />
+        <item itemvalue="Gradle.invoice-financing [buildDependents]" />
+        <item itemvalue="Gradle.ProfileFlowsTest.update flow should fail for non-existent profile" />
+        <item itemvalue="Gradle.ProfileFlowsTest.non-owner should not be able to update profile" />
         <item itemvalue="Gradle.ProfileFlowsTest.create profile flow should produce valid transaction" />
-        <item itemvalue="JUnit.FlowTests" />
-        <item itemvalue="Gradle.FlowTests" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +329,7 @@
       <workItem from="1738945838684" duration="41000" />
       <workItem from="1738945899685" duration="1644000" />
       <workItem from="1738947784231" duration="94000" />
-      <workItem from="1738947881750" duration="58670000" />
+      <workItem from="1738947881750" duration="77346000" />
     </task>
     <servers />
   </component>
