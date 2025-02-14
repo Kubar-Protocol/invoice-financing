@@ -21,9 +21,7 @@ import net.corda.core.schemas.MappedSchema
 import net.corda.core.schemas.PersistentState
 import org.hibernate.annotations.Type
 import java.util.UUID
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Table
+import javax.persistence.*
 
 /**
  * Schema family for Profile states.
@@ -58,7 +56,9 @@ object ProfileSchemaV1 : MappedSchema(
      * @property linearId Unique identifier used for state evolution tracking
      */
     @Entity
-    @Table(name = "profile_state")
+    @Table(name = "profile_state",
+        indexes = [Index( name="profile_state_owner_idx", columnList = "owner"),
+        Index( name="profile_state_linear_id_idx", columnList = "linear_id"), ])
     class PersistentProfileV1(
         @Column(name = "owner")
         val owner: String,
@@ -76,27 +76,11 @@ object ProfileSchemaV1 : MappedSchema(
         val placeOfBusiness: String,
         @Column(name = "last_modified")
         val lastModified: Long,
-        @Column(name = "status")
-        var status: String,
+        @Enumerated(EnumType.STRING)
+        @Column(name = "status", nullable = false, length = 30)
+        var status: Status,
         @Column(name = "linear_id")
         @Type(type = "uuid-char")
         var linearId: UUID,
-    ) : PersistentState() {
-        /**
-         * Default constructor required by Hibernate for entity creation.
-         * Initializes fields with empty/default values.
-         */
-        constructor() : this (
-            owner = "",
-            mobileNumber = "",
-            gstUserName = "",
-            gstIn = "",
-            gstInStatus = "",
-            legalBusinessName = "",
-            placeOfBusiness = "",
-            lastModified = 0L,
-            status = Status.ACTIVE.name,
-            linearId = UUID.randomUUID(),
-        )
-    }
+    ) : PersistentState()
 }

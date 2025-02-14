@@ -8,6 +8,7 @@ import com.kubarprotocol.invoicefinancing.states.ProfileState
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import net.corda.core.contracts.UniqueIdentifier
+import net.corda.core.identity.CordaX500Name
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 import net.corda.testing.common.internal.testNetworkParameters
@@ -21,20 +22,21 @@ class ProfileFlowsTest {
     private lateinit var mockNetwork: MockNetwork
     private lateinit var alice: StartedMockNode
     private lateinit var bob: StartedMockNode
-    private lateinit var notary: StartedMockNode
 
     @Before
     fun setup() {
         mockNetwork = MockNetwork(
             MockNetworkParameters(
                 networkParameters = testNetworkParameters(minimumPlatformVersion = 4),
+                notarySpecs = listOf(MockNetworkNotarySpec(CordaX500Name("Notary", "", "GB"))),
                 cordappsForAllNodes = listOf(
                     TestCordapp.findCordapp("com.kubarprotocol.invoicefinancing.contracts"),
                     TestCordapp.findCordapp("com.kubarprotocol.invoicefinancing.flows")
                 ),
+
             )
         )
-        notary=mockNetwork.defaultNotaryNode
+
         alice=mockNetwork.createPartyNode()
         bob=mockNetwork.createPartyNode()
 
@@ -77,6 +79,9 @@ class ProfileFlowsTest {
             val command = commands.single()
             assertTrue(command.value is ProfileContract.Commands.Create)
             assertEquals(alice.info.legalIdentities.single().owningKey, command.signers.single())
+
+            // Check Notary
+            assertEquals(mockNetwork.defaultNotaryIdentity, this.notary)
         }
 
     }
@@ -131,6 +136,8 @@ class ProfileFlowsTest {
             assertTrue(command.value is ProfileContract.Commands.Update)
             assertEquals(alice.info.legalIdentities.single().owningKey, command.signers.single())
 
+            // Check Notary
+            assertEquals(mockNetwork.defaultNotaryIdentity, this.notary)
         }
 
     }

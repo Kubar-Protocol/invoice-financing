@@ -32,7 +32,7 @@ class DriverBasedTest {
     private val bankB = TestIdentity(CordaX500Name("BankB", "", "US"))
 
     @Test
-    fun `node test`() =
+    fun `network map verification test`() =
         withDriver {
             // Start a pair of nodes and wait for them both to be ready.
             val (partyAHandle, partyBHandle) = startNodes(bankA, bankB)
@@ -45,6 +45,7 @@ class DriverBasedTest {
             assertEquals(bankB.name, partyAHandle.resolveName(bankB.name))
             assertEquals(bankA.name, partyBHandle.resolveName(bankA.name))
         }
+
 
     // Runs a test inside the Driver DSL, which provides useful functions for starting nodes, etc.
     private fun withDriver(test: DriverDSL.() -> Unit) =

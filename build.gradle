@@ -22,9 +22,10 @@ buildscript { //properties that you need to build the project
         persistence_version = constants.getProperty("persistenceVersion")
         corda_platform_version = constants.getProperty("platformVersion").toInteger()
         snappy_version = constants.getProperty("snappyVersion")
-        //springboot
-        spring_boot_version = '3.2.5'
-        spring_boot_gradle_plugin_version = '3.2.5'
+        spring_boot_version =  constants.getProperty("springbootVersion")
+        spring_boot_gradle_plugin_version =  constants.getProperty("springbootGradlePluginVersion")
+        ktlint_version=constants.getProperty("ktlintVersion")
+        kotlin_plugin_jpa_version = constants.getProperty("kotlinPluginJpaVersion")
 
         test_add_opens = ['--add-opens', 'java.base/java.time=ALL-UNNAMED', '--add-opens', 'java.base/java.io=ALL-UNNAMED',
                           '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.net=ALL-UNNAMED',
@@ -52,18 +53,22 @@ buildscript { //properties that you need to build the project
         classpath "net.corda.plugins:cordformation:$corda_gradle_plugins_version"
         classpath "net.corda.plugins:quasar-utils:$corda_gradle_plugins_version"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_gradle_plugin_version"
-
     }
 }
 
 
 plugins { //Plugins DSL simplifies plugin management
-    id "org.jlleitschuh.gradle.ktlint" version "12.1.2"
+    id "org.jlleitschuh.gradle.ktlint" version "$ktlint_version"
+    id "net.corda.plugins.cordapp" version "$corda_gradle_plugins_version"
+    id "net.corda.plugins.cordformation" version "$corda_gradle_plugins_version"
+    id "net.corda.plugins.quasar-utils" version "$corda_gradle_plugins_version"
+    id "org.jetbrains.kotlin.plugin.jpa" version "$kotlin_plugin_jpa_version"
 }
 
 allprojects { //Properties that you need to compile your project (The application)
     apply from: "${rootProject.projectDir}/repositories.gradle"
     apply plugin: 'kotlin'
+    apply plugin: 'kotlin-jpa'
 
     repositories {
         mavenLocal()
@@ -88,10 +93,6 @@ allprojects { //Properties that you need to compile your project (The applicatio
         reproducibleFileOrder = true
     }
 }
-
-apply plugin: 'net.corda.plugins.cordapp'
-apply plugin: 'net.corda.plugins.cordformation'
-apply plugin: 'net.corda.plugins.quasar-utils'
 
 sourceSets {
     main {

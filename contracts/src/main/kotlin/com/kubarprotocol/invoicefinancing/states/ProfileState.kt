@@ -62,7 +62,7 @@ data class ProfileState(
                     this.legalBusinessName,
                     this.placeOfBusiness,
                     this.lastModified.toEpochMilli(),
-                    this.status.toString(),
+                    this.status,
                     this.linearId.id,
                 )
             else -> throw IllegalArgumentException("Unrecognised schema $schema")

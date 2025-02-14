@@ -1,4 +1,7 @@
-apply plugin: 'org.springframework.boot'
+plugins {
+    id 'org.springframework.boot'
+}
+//apply plugin: 'org.springframework.boot'
 
 sourceSets {
     main {
